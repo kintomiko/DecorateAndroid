@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    tools:context="com.example.kin.decorate.ItemDetailActivity"
+    android:divider="?android:attr/dividerHorizontal" android:orientation="vertical"
+    android:showDividers="middle" >
+
+    <FrameLayout android:id="@+id/item_detail_container" android:layout_width="match_parent"
+        android:layout_height="0dp" android:layout_weight="1" />
+
+    <fragment android:id="@+id/project_item_list" android:name="com.example.kin.decorate.ProjectItemListFragment"
+        android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="3"
+        tools:layout="@android:layout/list_content" />
+
+</LinearLayout>

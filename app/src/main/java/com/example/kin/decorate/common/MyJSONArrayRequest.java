@@ -1,4 +1,4 @@
-package com.example.kin.decorate;
+package com.example.kin.decorate.common;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
@@ -40,10 +40,10 @@ public class MyJSONArrayRequest extends JsonRequest<JSONArray> {
             String jsonString = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
             // here's the new code, if jsonString.length() == 0 don't parse
             if (jsonString.length() == 0) {
-                return Response.success(null, HttpHeaderParser.parseCacheHeaders(response, ignoreNoCache()));
+                return Response.success(null, HttpHeaderParser.parseCacheHeaders(response));
             }
             // end of patch
-            return Response.success(new JSONArray(jsonString), HttpHeaderParser.parseCacheHeaders(response, ignoreNoCache()));
+            return Response.success(new JSONArray(jsonString), HttpHeaderParser.parseCacheHeaders(response));
         } catch (UnsupportedEncodingException e) {
             return Response.error(new ParseError(e));
         } catch (JSONException je) {

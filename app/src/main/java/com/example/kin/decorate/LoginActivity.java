@@ -5,8 +5,8 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
-import android.content.ContentResolver;
 import android.content.CursorLoader;
+import android.content.Intent;
 import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
@@ -26,10 +26,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonRequest;
+import com.example.kin.decorate.common.DecorateUtils;
+import com.example.kin.decorate.common.MyJSONArrayRequest;
+import com.example.kin.decorate.common.Singleton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -289,18 +290,36 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                         (url, new Response.Listener<JSONArray>() {
                             @Override
                             public void onResponse(JSONArray response) {
+                                if(response == null)
+                                    return;
+
                                 JSONObject json = null;
                                 Map map = null;
 
                                 try {
                                     json = response.getJSONObject(0);
+                                    if(json == null)
+                                        return;
                                     map = new TreeMap<String, String>();
-                                    map.put("name",json.getString("name"));
-                                    map.put("id",json.getString("pk"));
+                                    map.put("name", json.getJSONObject("fields").getString("username"));
+
+                                    map.put("uid",response.getJSONObject(0).getString("pk"));
+
+                                    if(response.length()>1)
+                                        map.put("type","monitor");
+                                    else
+                                        map.put("type","user");
+                                    DecorateUtils.setUserInfo(getApplicationContext(), map);
+                                    Intent intent=new Intent();
+//                                    intent.putExtra("myname", "这是从HelloActivity传过来的值");
+                                    intent.setClass(LoginActivity.this, ItemListActivity.class);
+                                    LoginActivity.this.startActivity(intent);
+                                    GetChange mChangeTask = new GetChange();
+                                    mChangeTask.execute((Void) null);
+
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
-                                Singleton.setUserInfo(getApplicationContext(), map);
                             }
                         }, new Response.ErrorListener() {
 
@@ -317,13 +336,13 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 return false;
             }
 
-            for (String credential : DUMMY_CREDENTIALS) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    return pieces[1].equals(mPassword);
-                }
-            }
+//            for (String credential : DUMMY_CREDENTIALS) {
+//                String[] pieces = credential.split(":");
+//                if (pieces[0].equals(mEmail)) {
+//                    // Account exists, return true if the password matches.
+//                    return pieces[1].equals(mPassword);
+//                }
+//            }
 
             // TODO: register the new account here.
             return true;
@@ -346,6 +365,22 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
         protected void onCancelled() {
             mAuthTask = null;
             showProgress(false);
+        }
+    }
+
+    public class GetChange extends AsyncTask {
+
+        @Override
+        protected Object doInBackground(Object[] params) {
+            try {
+                while(true) {
+                    DecorateUtils.notify(getApplicationContext());
+                    Thread.sleep(60000);
+                }
+            } catch (Exception e) {
+                return false;
+            }
+
         }
     }
 }
