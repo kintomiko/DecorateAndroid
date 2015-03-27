@@ -1,26 +1,17 @@
 package com.example.kin.decorate;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.kin.decorate.common.DecorateUtils;
 import com.example.kin.decorate.common.Singleton;
-import com.example.kin.decorate.dummy.DummyContent;
 import com.example.kin.decorate.models.Project;
 
 import org.json.JSONArray;
@@ -94,11 +85,11 @@ public class ItemListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         String type = DecorateUtils.getUserInfo(getActivity().getApplicationContext(), "type", "");
-        String url = new StringBuilder("http://192.168.0.26:8000/monitor/list_monitor_projects/?id=")
+        String url = new StringBuilder("http://123.57.248.228:8080/monitor/list_monitor_projects/?id=")
                 .append(DecorateUtils.getUserInfo(getActivity().getApplicationContext(), "uid", "")).toString();
 
         if("user".equals(type))
-            url = new StringBuilder("http://192.168.0.26:8000/monitor/list_user_projects/?id=")
+            url = new StringBuilder("http://123.57.248.228:8080/monitor/list_user_projects/?id=")
                     .append(DecorateUtils.getUserInfo(getActivity().getApplicationContext(), "uid", "")).toString();
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(

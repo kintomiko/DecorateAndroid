@@ -2,26 +2,11 @@ package com.example.kin.decorate;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v4.app.NavUtils;
+import android.support.v7.app.ActionBarActivity;
 import android.view.MenuItem;
-import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.kin.decorate.common.DecorateUtils;
-import com.example.kin.decorate.common.Singleton;
-import com.example.kin.decorate.common.enums.ProjectItemStatus;
-import com.example.kin.decorate.common.enums.ProjectItemType;
-import com.example.kin.decorate.models.ProjectItem;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 
 /**
@@ -96,32 +81,38 @@ public class ItemDetailActivity extends ActionBarActivity implements ProjectItem
     public void onFragmentInteraction(String id) {
 
         String type = DecorateUtils.getUserInfo(getApplicationContext(), "type", "");
-        if("user".equals(type))
-            return;
+//        if("user".equals(type)) {
 
-        for(ProjectItem item:itemListFragment.projectItemList){
-            if(item.id.toString().equals(id)){
-                if (item.status.id<203) {
-                    item.status.id++;
-                    final String url = new StringBuilder("http://192.168.0.26:8000/monitor/change_item_status/?id=")
-                            .append(item.id).append("&status=").append(item.status.id).toString();
-                    JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
-                            url, new Response.Listener<JSONArray>() {
-                        @Override
-                        public void onResponse(JSONArray response) {
+            Intent intent=new Intent();
+            intent.putExtra("iid", id);
+            intent.setClass(this, ImgGridActivity.class);
+            this.startActivity(intent);
 
-                        }
-                    }, new Response.ErrorListener() {
-
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                        }
-                    });
-
-                    Singleton.getInstance(getApplicationContext()).addToRequestQueue(jsonArrayRequest);
-                }
-            }
-        }
+//        }else{
+//            for (ProjectItem item : itemListFragment.projectItemList) {
+//                if (item.id.toString().equals(id)) {
+//                    if (item.status.id < 203) {
+//                        item.status.id++;
+//                        final String url = new StringBuilder("http://123.57.248.228:8080/monitor/change_item_status/?id=")
+//                                .append(item.id).append("&status=").append(item.status.id).toString();
+//                        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+//                                url, new Response.Listener<JSONArray>() {
+//                            @Override
+//                            public void onResponse(JSONArray response) {
+//
+//                            }
+//                        }, new Response.ErrorListener() {
+//
+//                            @Override
+//                            public void onErrorResponse(VolleyError error) {
+//                            }
+//                        });
+//
+//                        Singleton.getInstance(getApplicationContext()).addToRequestQueue(jsonArrayRequest);
+//                    }
+//                }
+//            }
+//        }
 
     }
 }

@@ -20,6 +20,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Iterator;
 import java.util.Map;
 
@@ -75,7 +77,7 @@ public class DecorateUtils {
     }
 
     public static void notify(final Context context){
-        final String url = new StringBuilder("http://192.168.0.26:8000/monitor/get_changes/?id=")
+        final String url = new StringBuilder("http://123.57.248.228:8080/monitor/get_changes/?id=")
                 .append(DecorateUtils.getUserInfo(context, "uid", "")).toString();
         //get changes
         JsonArrayRequest jsonArrayRequest1 = new JsonArrayRequest(
@@ -109,5 +111,22 @@ public class DecorateUtils {
         });
 
         Singleton.getInstance(context.getApplicationContext()).addToRequestQueue(jsonArrayRequest1);
+    }
+
+    public static void CopyStream(InputStream is, OutputStream os)
+    {
+        final int buffer_size=1024;
+        try
+        {
+            byte[] bytes=new byte[buffer_size];
+            for(;;)
+            {
+                int count=is.read(bytes, 0, buffer_size);
+                if(count==-1)
+                    break;
+                os.write(bytes, 0, count);
+            }
+        }
+        catch(Exception ex){}
     }
 }

@@ -31,6 +31,7 @@ import com.android.volley.VolleyError;
 import com.example.kin.decorate.common.DecorateUtils;
 import com.example.kin.decorate.common.MyJSONArrayRequest;
 import com.example.kin.decorate.common.Singleton;
+import com.example.kin.decorate.notification.ServiceManager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -284,7 +285,7 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                 Map postdata = new TreeMap<String, String>();
                     postdata.put("username", username);
                     postdata.put("password", password);
-                String url = new StringBuilder("http://192.168.0.26:8000/monitor/login/").append("?").append(DecorateUtils.httpBuildQuery(postdata)).toString();
+                String url = new StringBuilder("http://123.57.248.228:8080/monitor/login/").append("?").append(DecorateUtils.httpBuildQuery(postdata)).toString();
 
                 MyJSONArrayRequest jsObjRequest = new MyJSONArrayRequest
                         (url, new Response.Listener<JSONArray>() {
@@ -310,12 +311,17 @@ public class LoginActivity extends Activity implements LoaderCallbacks<Cursor> {
                                     else
                                         map.put("type","user");
                                     DecorateUtils.setUserInfo(getApplicationContext(), map);
+                                    //register notification
+                                    ServiceManager serviceManager = new ServiceManager(getApplicationContext());
+                                    serviceManager.setNotificationIcon(R.drawable.notification);
+                                    serviceManager.startService();
+
                                     Intent intent=new Intent();
 //                                    intent.putExtra("myname", "这是从HelloActivity传过来的值");
                                     intent.setClass(LoginActivity.this, ItemListActivity.class);
                                     LoginActivity.this.startActivity(intent);
-                                    GetChange mChangeTask = new GetChange();
-                                    mChangeTask.execute((Void) null);
+//                                    GetChange mChangeTask = new GetChange();
+//                                    mChangeTask.execute((Void) null);
 
                                 } catch (JSONException e) {
                                     e.printStackTrace();

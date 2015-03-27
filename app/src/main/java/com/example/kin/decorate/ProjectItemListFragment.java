@@ -95,7 +95,7 @@ public class ProjectItemListFragment extends Fragment implements AbsListView.OnI
 
         // TODO: Change Adapter to display your content
         Intent intent = getActivity().getIntent();
-        final String url = new StringBuilder("http://192.168.0.26:8000/monitor/project_items/?id=")
+        final String url = new StringBuilder("http://123.57.248.228:8080/monitor/project_items/?id=")
                 .append(intent.getStringExtra(ItemDetailFragment.ARG_ITEM_ID)).toString();
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
                 url, new Response.Listener<JSONArray>() {

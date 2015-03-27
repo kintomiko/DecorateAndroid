@@ -10,7 +10,10 @@ import com.android.volley.toolbox.Volley;
  * Created by kin on 3/18/15.
  */
 public class Singleton {
-    private Singleton(Context context){ mCtx=context; }
+    private Singleton(Context context){
+        mCtx=context;
+        imageLoader = new ImageLoader(context);
+    }
     private static Singleton instance;
     private static Context mCtx;
 
@@ -33,5 +36,7 @@ public class Singleton {
     public <T> void addToRequestQueue(Request<T> req) {
         getRequestQueue().add(req);
     }
+
+    public ImageLoader imageLoader = null;
 
 }
