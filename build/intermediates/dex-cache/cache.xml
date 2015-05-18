@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/kin/.gradle/caches/modules-2/files-2.1/org.apache.httpcomponents/httpmime/4.4/54646f004d5b4c37a5a75b1d416c59a3075204e2/httpmime-4.4.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="54646f004d5b4c37a5a75b1d416c59a3075204e2">
+        <dex dex="/home/kin/AndroidStudioProjects/DecorateAndroid/app/build/intermediates/pre-dexed/debug/httpmime-4.4-cd301a965944c61f797909887c00664a06394fa9.jar" />
+    </item>
+    <item
+        jar="/home/kin/AndroidStudioProjects/DecorateAndroid/app/libs/asmack.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="fe03343aa1bcebe304b71c2c4ca64e447b86d565">
+        <dex dex="/home/kin/AndroidStudioProjects/DecorateAndroid/app/build/intermediates/pre-dexed/debug/asmack-973e53fcb48484a4bb45f88168364776e46abdc4.jar" />
+    </item>
+    <item
+        jar="/home/kin/AndroidStudioProjects/DecorateAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/home/kin/AndroidStudioProjects/DecorateAndroid/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-3bafd6ded7ea71b3290bb40d6e3c046e17c7f1af.jar" />
+    </item>
+    <item
+        jar="/home/kin/AndroidStudioProjects/DecorateAndroid/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/home/kin/AndroidStudioProjects/DecorateAndroid/app/build/intermediates/pre-dexed/debug/classes-f7c18058d9360fb91d55a9d30e0aebe702990abf.jar" />
+    </item>
+    <item
+        jar="/home/kin/AndroidStudioProjects/Decorate/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/home/kin/AndroidStudioProjects/Decorate/app/build/intermediates/pre-dexed/debug/classes-75894c3f636171daee99a1d0abb47f9603153673.jar" />
+    </item>
+    <item
+        jar="/home/kin/AndroidStudioProjects/DecorateAndroid/app/libs/library-1.0.10.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="8d62b91f5ccb6f7f872313191c016c03bb61a792">
+        <dex dex="/home/kin/AndroidStudioProjects/DecorateAndroid/app/build/intermediates/pre-dexed/debug/library-1.0.10-795c6f674a8fc8a1c659ec8b1a22318a4c9482f5.jar" />
+    </item>
+    <item
+        jar="/home/kin/AndroidStudioProjects/Decorate/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="4e86306289ace4aa0cfec44a05ed2b410d36989d">
+        <dex dex="/home/kin/AndroidStudioProjects/Decorate/app/build/intermediates/pre-dexed/debug/classes-96ce7aa468c6073e57469577d9272b003216c4e3.jar" />
+    </item>
+    <item
+        jar="/home/kin/AndroidStudioProjects/DecorateAndroid/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/home/kin/AndroidStudioProjects/DecorateAndroid/app/build/intermediates/pre-dexed/debug/classes-56042ce51277ffeeabe8a9a3c217d605878ca334.jar" />
+    </item>
+    <item
+        jar="/home/kin/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/22.0.0/support-annotations-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="685d0b2c590447e85284ed84712cb363ba04eff8">
+        <dex dex="/home/kin/AndroidStudioProjects/Decorate/app/build/intermediates/pre-dexed/debug/support-annotations-22.0.0-7b287eaf2979b432f2f8aa77dea25b3b98acb310.jar" />
+    </item>
+    <item
+        jar="/home/kin/AndroidStudioProjects/Decorate/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/6.5.87/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="dd9247ea0fabe8ee479638c4b4a23e93752be256">
+        <dex dex="/home/kin/AndroidStudioProjects/Decorate/app/build/intermediates/pre-dexed/debug/classes-79c69f604c7b51eca7a9595a184ca0632d1bdbc5.jar" />
+    </item>
+    <item
+        jar="/home/kin/AndroidStudioProjects/Decorate/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.0.0/libs/internal_impl-22.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="b5b92f469d515a13d778900f6d50c03d12f35504">
+        <dex dex="/home/kin/AndroidStudioProjects/Decorate/app/build/intermediates/pre-dexed/debug/internal_impl-22.0.0-0a2b4d5677af583a1e64b313e6bb5a61e7e0b018.jar" />
+    </item>
+    <item
+        jar="/home/kin/AndroidStudioProjects/DecorateAndroid/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.0.0/classes.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="d84409890828e07d344a3b9b1da545dba9897b51">
+        <dex dex="/home/kin/AndroidStudioProjects/DecorateAndroid/app/build/intermediates/pre-dexed/debug/classes-5a745cfec1beff53e84511786f3e079e211c803d.jar" />
+    </item>
+    <item
+        jar="/home/kin/.gradle/caches/modules-2/files-2.1/eu.the4thfloor.volley/com.android.volley/2015.02.02/f1e9b2fbd9299ffddcec09545257be92ec1cf6aa/com.android.volley-2015.02.02.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="f1e9b2fbd9299ffddcec09545257be92ec1cf6aa">
+        <dex dex="/home/kin/AndroidStudioProjects/Decorate/app/build/intermediates/pre-dexed/debug/com.android.volley-2015.02.02-9f9146f4da09e8ef09f9b7e55631a8b7bc7184a6.jar" />
+    </item>
+
+</items>
